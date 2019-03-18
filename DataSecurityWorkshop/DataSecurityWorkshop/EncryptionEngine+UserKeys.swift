@@ -19,32 +19,15 @@ extension EncryptionEngine {
   
   func saveEncryptionKeyToKeychain(key: Key) {
     // TODO: save passwords in Keychain
-    let myValet = Valet.valet(with: Identifier(nonEmpty: EncryptionEngine.valetID)!, accessibility: .whenUnlocked)
-    myValet.set(object: key.data, forKey: EncryptionEngine.valetKeyID)
     
     // TODO: remember in UserDefaults that application has set key in Keychain
-    
-    // remember in User Defaults
-    rememberAppHasRun()
   }
   
   func readEncryptionKeyFromKeychain() -> Key? {
     // TODO: read passwords from Keychain
     
+    // TODO: check that application is running first time, then key is can be left from previous installation, ignore it
     
-    let myValet = Valet.valet(with: Identifier(nonEmpty: EncryptionEngine.valetID)!, accessibility: .whenUnlocked)
-    if let readObject = myValet.object(forKey: EncryptionEngine.valetKeyID) {
-      
-      // TODO: check that application is running first time, then key is can be left from previous installation, ignore it
-      
-      // if first run, then key is left from previous installation, should remove
-      if (isAppFirstRun()) {
-        print("The Keychain is stored from previous app launch, do not read key")
-        return nil
-      }
-      
-      return Key(data: readObject)
-    }
     return nil
   }
   
