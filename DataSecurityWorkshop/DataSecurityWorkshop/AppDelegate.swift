@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      
+//      var path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+//      var folder = path[0]
+//      print("Your NSUserDefaults are stored in this folder: \(folder)/Preferences")
+//
         return true
     }
 }

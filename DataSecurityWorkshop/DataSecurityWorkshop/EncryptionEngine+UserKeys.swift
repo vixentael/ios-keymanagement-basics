@@ -18,6 +18,7 @@ extension EncryptionEngine {
   static let valetKeyID = "encryptionkey"
   
   func saveEncryptionKeyToKeychain(key: Key) {
+    // TODO: save passwords in Keychain
     let myValet = Valet.valet(with: Identifier(nonEmpty: EncryptionEngine.valetID)!, accessibility: .whenUnlocked)
     myValet.set(object: key.data, forKey: EncryptionEngine.valetKeyID)
     
@@ -28,6 +29,9 @@ extension EncryptionEngine {
   }
   
   func readEncryptionKeyFromKeychain() -> Key? {
+    // TODO: read passwords from Keychain
+    
+    
     let myValet = Valet.valet(with: Identifier(nonEmpty: EncryptionEngine.valetID)!, accessibility: .whenUnlocked)
     if let readObject = myValet.object(forKey: EncryptionEngine.valetKeyID) {
       
