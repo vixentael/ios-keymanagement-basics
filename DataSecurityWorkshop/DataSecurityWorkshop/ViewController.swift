@@ -42,7 +42,6 @@ class ViewController: UIViewController {
       
       self.encryptionEngine.saveEncryptionKeyToUserDefaults(key: Key(string: pwd)!)
       
-      // TODO: save password to keychain instead ;)
       self.encryptionEngine.saveEncryptionKeyToKeychain(key: Key(string: pwd)!)
     }
     
@@ -60,7 +59,6 @@ class ViewController: UIViewController {
       print("Can't read user password from User Defaults :'(")
     }
     
-    // TODO: read from keychain instead ;)
     if let keyFromKeychain = self.encryptionEngine.readEncryptionKeyFromKeychain(),
       let userPasswordFromKeychain = keyFromKeychain.utf8String {
       print("User password from Keychain: " + userPasswordFromKeychain)

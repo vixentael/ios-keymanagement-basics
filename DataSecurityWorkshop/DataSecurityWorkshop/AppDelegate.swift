@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      var path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
 //      var folder = path[0]
 //      print("Your NSUserDefaults are stored in this folder: \(folder)/Preferences")
-//      
+//
         return true
     }
 }
